@@ -25,6 +25,10 @@ while game_is_on:
         scoreboard.update_level()
         car_manager.speed_up()
 
+    if player.detect_collision(car_manager.cars):
+        game_is_on = False
+        scoreboard.game_over()
+
     car_manager.update_cars()
     car_manager.generate_car()
 
